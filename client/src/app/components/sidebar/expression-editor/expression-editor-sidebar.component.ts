@@ -16,12 +16,10 @@ require ("../shared/editor-sidebar.component.scss");
     animations: [
         trigger("sidebarState", [
             state("visible", style({
-                width:"40%",
                 display: "block",
                 overflowY: "auto",
             })),
             state("hidden", style({
-                width: "10%",
                 display: "none",
                 overflowY: "hidden"
             })),
@@ -66,7 +64,7 @@ export class ExpressionEditorSidebarComponent {
         this.eventHubService.on(CloseExpressionEditor).subscribe(() => {
             this.sidebarState = "hidden";
         });
-        
+
         this.eventHubService.on(OpenInputInspector).subscribe((action) => {
             this.isShown = false;
         });
